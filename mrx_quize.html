@@ -19,6 +19,12 @@ body{
     overflow-x:hidden;
 }
 
+/* REMOVE ALL UNDERLINES */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
 /* NAV */
 nav{
     position:fixed;
@@ -37,12 +43,6 @@ nav{
     font-weight:bold;
     color:#00e5ff;
     letter-spacing:2px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
 }
 
 /* HERO */
@@ -71,7 +71,7 @@ nav a{
 
 /* BUTTON */
 .btn{
-    margin-top:25px;
+    margin-top:20px;
     padding:14px 30px;
     border:2px solid #00e5ff;
     border-radius:35px;
@@ -79,12 +79,18 @@ nav a{
     color:white;
     cursor:pointer;
     transition:0.3s;
+    display:inline-block;
 }
 
 .btn:hover{
     background:#00e5ff;
     color:black;
     transform:scale(1.06);
+    box-shadow:0 0 15px #00e5ff;
+}
+
+.btn:active{
+    transform:scale(0.95);
 }
 
 /* SECTION */
@@ -120,14 +126,14 @@ section{
     transform:translateY(-10px) scale(1.03);
 }
 
-.card h3{
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-.card p{
-    line-height:1.7;
-    opacity:0.9;
+/* DOWNLOAD BOX */
+.download-box{
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:25px;
+    padding:40px;
+    backdrop-filter:blur(15px);
 }
 
 /* FOOTER */
@@ -169,8 +175,7 @@ footer{
     <h1>🚀 MRX Quize</h1>
     <p>
         A modern Android quiz application designed to deliver a smooth,
-        engaging and interactive learning experience with powerful features
-        and premium user interface.
+        engaging and interactive learning experience.
     </p>
 
     <button class="btn" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
@@ -183,37 +188,53 @@ footer{
     <h2 class="section-title">🔥 Core Features</h2>
 
     <div class="cards">
-
         <div class="card">
             <h3>📚 Quiz System</h3>
-            <p>Interactive quizzes with smooth navigation and user-friendly design.</p>
+            <p>Interactive quizzes with smooth navigation.</p>
         </div>
 
         <div class="card">
             <h3>🌐 Multi Language</h3>
-            <p>Supports both Hindi and English quizzes based on user preference.</p>
+            <p>Hindi & English support.</p>
         </div>
 
         <div class="card">
             <h3>🎯 Subject Wise</h3>
-            <p>Multiple subjects covered up to class 12 for structured learning.</p>
+            <p>Multiple subjects up to class 12.</p>
         </div>
 
         <div class="card">
             <h3>⚡ Fast & Smooth</h3>
-            <p>Optimized performance with fast loading and responsive UI.</p>
+            <p>Optimized performance.</p>
         </div>
 
         <div class="card">
             <h3>🎨 Premium UI</h3>
-            <p>Modern glass design with smooth animations and gradients.</p>
+            <p>Modern glass design.</p>
         </div>
 
         <div class="card">
-            <h3>💰 AdMob Integration</h3>
-            <p>Smart monetization with balanced user experience.</p>
+            <h3>💰 AdMob</h3>
+            <p>Smart monetization.</p>
         </div>
+    </div>
+</section>
 
+<!-- DOWNLOAD + POLICY -->
+<section>
+    <div class="download-box">
+        <h2>📥 Download MRX Quize</h2>
+        <p>Install the app and start learning with fun quizzes.</p>
+
+        <a href="https://play.google.com/store/apps/details?id=com.mrx.quize" class="btn">
+            🚀 Download Now
+        </a>
+
+        <br>
+
+        <a href="https://nileshchouhan143.github.io/mrx_quize_policy/" class="btn">
+            🔒 Privacy Policy
+        </a>
     </div>
 </section>
 
@@ -222,26 +243,10 @@ footer{
     <h2 class="section-title">📖 About This App</h2>
 
     <p style="text-align:center; max-width:850px; margin:auto; line-height:1.9;">
-        MRX Quize is not just a quiz app — it's a complete learning platform
-        designed to make grammar practice simple, interactive, and engaging.
-        Instead of traditional methods, it focuses on a smooth user experience,
-        modern interface, and smart learning approach.
+        MRX Quize is a complete learning platform with modern UI and smart learning experience.
     </p>
 
-    <p style="text-align:center; max-width:850px; margin:20px auto; line-height:1.9; opacity:0.9;">
-        Along with grammar practice, the app offers subject-wise quizzes covering
-        multiple topics up to class 12. Users can choose quizzes based on their
-        preference, including both Hindi and English modes, making it flexible
-        and suitable for different learning needs.
-    </p>
-
-    <p style="text-align:center; max-width:850px; margin:20px auto; line-height:1.9; opacity:0.9;">
-        With continuous updates, improvements, and new ideas, MRX Quize is evolving
-        into a powerful educational tool where users not only learn but also enjoy
-        the complete experience.
-    </p>
-
-    <div style="text-align:center;">
+    <div style="text-align:center; margin-top:20px;">
         <a href="index.html" class="btn">← Back to Home</a>
     </div>
 </section>
