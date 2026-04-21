@@ -3,113 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M R X | Developer Portfolio</title>
+<title>M R X | Developer</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;}
 
 body{
-    background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    background: radial-gradient(circle at top,#1a1a40,#0f0c29);
     color:white;
     overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* BACKGROUND GLOW */
+.bg{
+    position:fixed;width:100%;height:100%;z-index:-1;
+}
+.circle{
+    position:absolute;border-radius:50%;filter:blur(120px);opacity:0.4;
+}
+.c1{width:300px;height:300px;background:#00e5ff;top:10%;left:10%;}
+.c2{width:400px;height:400px;background:#8a2be2;bottom:10%;right:10%;}
+.c3{width:250px;height:250px;background:#ff00cc;top:50%;left:40%;}
+
+/* NAV */
 nav{
-    position:fixed;
-    width:100%;
+    position:fixed;width:100%;
     padding:18px 30px;
-    background:rgba(0,0,0,0.25);
     backdrop-filter: blur(12px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    background:rgba(0,0,0,0.3);
+    display:flex;justify-content:space-between;
     z-index:1000;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#00e5ff;
-    letter-spacing:2px;
-}
+.logo{font-size:28px;color:#00e5ff;font-weight:bold;}
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#00e5ff;
-}
+nav a{color:white;margin-left:20px;text-decoration:none;}
 
 /* HERO */
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    height:100vh;display:flex;
     flex-direction:column;
-    text-align:center;
-    padding:20px;
+    justify-content:center;align-items:center;
+    text-align:center;padding:20px;
 }
 
 .hero h1{
-    font-size:52px;
-    margin-bottom:15px;
-    animation:slideDown 1s ease;
+    font-size:60px;
+    background:linear-gradient(90deg,#00e5ff,#8a2be2);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .hero p{
-    font-size:20px;
     max-width:700px;
-    line-height:1.7;
-    opacity:0.9;
-    animation:fadeIn 1.5s ease;
+    font-size:20px;margin-top:15px;
 }
 
+/* BUTTON */
 .btn{
-    margin-top:30px;
+    margin-top:25px;
     padding:14px 30px;
     border:2px solid #00e5ff;
     border-radius:35px;
     background:transparent;
     color:white;
     cursor:pointer;
-    font-size:16px;
     transition:0.3s;
 }
 
 .btn:hover{
-    background:#00e5ff;
-    color:black;
-    transform:scale(1.06);
+    background:#00e5ff;color:black;
+    transform:scale(1.08);
 }
 
 /* SECTION */
-section{
-    padding:90px 20px;
-    max-width:1200px;
-    margin:auto;
+section{padding:100px 20px;max-width:1200px;margin:auto;}
+.title{text-align:center;font-size:38px;margin-bottom:50px;}
+
+/* TAGLINE */
+.tagline{
+    text-align:center;
+    font-size:18px;
+    opacity:0.7;
+    margin-top:-30px;
+    margin-bottom:40px;
 }
 
-.section-title{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:50px;
+/* SKILLS */
+.skills{
+    display:flex;flex-wrap:wrap;
+    justify-content:center;gap:12px;
+}
+.skill{
+    padding:10px 18px;
+    border:1px solid #00e5ff;
+    border-radius:20px;
+    font-size:14px;
 }
 
 /* CARDS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
 
@@ -117,143 +112,190 @@ section{
     background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,0.15);
     border-radius:25px;
-    padding:30px;
-    backdrop-filter:blur(15px);
+    padding:25px;
+    backdrop-filter:blur(20px);
     transition:0.4s;
-    cursor:pointer;
     position:relative;
-    overflow:hidden;
-}
-
-.card::before{
-    content:'';
-    position:absolute;
-    width:120px;
-    height:120px;
-    background:rgba(0,229,255,0.15);
-    border-radius:50%;
-    top:-40px;
-    right:-40px;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.03);
+    transform:translateY(-10px) scale(1.04);
 }
 
-.card h3{
-    font-size:24px;
-    margin-bottom:12px;
+.badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:12px;
+    background:#00e5ff;
+    color:black;
 }
 
-.card p{
-    line-height:1.7;
-    opacity:0.9;
+/* STATS */
+.stats{
+    display:flex;justify-content:space-around;
+    flex-wrap:wrap;text-align:center;
+}
+.stat h2{
+    font-size:45px;color:#00e5ff;
 }
 
-.icon{
-    font-size:40px;
-    margin-bottom:15px;
+/* ABOUT */
+.about{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+    line-height:1.9;
 }
+
+/* CONTACT */
+.contact{text-align:center;}
 
 /* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    opacity:0.7;
-}
+footer{text-align:center;padding:30px;opacity:0.7;}
 
-/* ANIMATIONS */
-@keyframes slideDown{
-    from{opacity:0;transform:translateY(-40px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-
-/* MOBILE */
 @media(max-width:600px){
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
+.hero h1{font-size:36px;}
+.hero p{font-size:16px;}
 }
 </style>
 </head>
+
 <body>
 
+<div class="bg">
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+</div>
+
 <nav>
-    <div class="logo">M R X</div>
-    <div>
-        <a href="#projects">Projects</a>
-        <a href="#future">Future</a>
-    </div>
+<div class="logo">M R X</div>
+<div>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-    <h1>Welcome to M R X Developer Space</h1>
-    <p>
-        Creating premium Android apps, interactive quiz platforms,
-        modern educational applications and engaging game experiences.
-        More innovative apps are on the way.
-    </p>
-    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-        Explore Projects
-    </button>
+<h1>M R X Developer</h1>
+<p>Building premium Android apps and modern learning experiences.</p>
+<button class="btn" onclick="scrollToSection('projects')">Explore</button>
 </section>
 
+<!-- ABOUT -->
+<section>
+<h2 class="title">👨‍💻 About Developer</h2>
+<p class="about">
+Focused on creating modern Android apps with smooth UI and engaging experience.
+Building educational apps, quiz platforms, and interactive systems.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section>
+<h2 class="title">🛠 Tech Stack</h2>
+<p class="tagline">Technologies I use to build powerful apps</p>
+
+<div class="skills">
+<div class="skill">Android</div>
+<div class="skill">Java</div>
+<div class="skill">Kotlin</div>
+<div class="skill">Firebase</div>
+<div class="skill">AdMob</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+</div>
+</section>
+
+<!-- WHAT I BUILD -->
+<section>
+<h2 class="title">🚀 What I Build</h2>
+
+<div class="cards">
+<div class="card"><h3>📱 Android Apps</h3><p>Modern and smooth mobile applications.</p></div>
+<div class="card"><h3>🎮 Interactive Systems</h3><p>Engaging user experiences and game logic.</p></div>
+<div class="card"><h3>📚 Learning Platforms</h3><p>Educational apps with smart UI and features.</p></div>
+</div>
+</section>
+
+<!-- STATS -->
+<section>
+<h2 class="title">📊 Highlights</h2>
+
+<div class="stats">
+<div class="stat"><h2 id="a1">0</h2><p>Apps Built</p></div>
+<div class="stat"><h2 id="a2">0</h2><p>Features</p></div>
+<div class="stat"><h2 id="a3">0</h2><p>Updates</p></div>
+</div>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
+<h2 class="title">🚀 Projects</h2>
+<p class="tagline">Real apps and upcoming ideas</p>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card" onclick="window.location.href='mrx_quize.html'">
-            <div class="icon">📱</div>
-            <h3>MRX Quize</h3>
-            <p>
-                Premium quiz and learning app with modern UI,
-                smart animations, grammar games and interactive learning experience.
-            </p>
-        </div>
+<div class="card" onclick="location.href='mrx_quize.html'">
+<div class="badge">Live</div>
+<h3>MRX Quize</h3>
+<p>Subject-wise quiz app with Hindi & English support.</p>
+<button class="btn">View</button>
+</div>
 
-        <div class="card">
-            <div class="icon">📚</div>
-            <h3>English Grammar</h3>
-            <p>
-                Coming Soon 🚀<br><br>
-                A next-generation English learning app with games,
-                grammar lessons, quizzes and premium UI.
-            </p>
-        </div>
+<div class="card">
+<div class="badge">Coming</div>
+<h3>English Grammar</h3>
+<p>Advanced grammar learning app (under development).</p>
+</div>
 
-        <div class="card">
-            <div class="icon">✨</div>
-            <h3>Next App Loading...</h3>
-            <p>
-                Something exciting is coming next.
-                The next premium app is still under planning and design.
-            </p>
-        </div>
+<div class="card">
+<div class="badge">Future</div>
+<h3>Next App</h3>
+<p>New powerful concept coming soon.</p>
+</div>
 
-    </div>
+</div>
 </section>
 
-<section id="future">
-    <h2 class="section-title">Future Vision</h2>
-    <p style="text-align:center; line-height:1.8; max-width:800px; margin:auto;">
-        More advanced educational apps, puzzle games and premium Android experiences
-        are currently being planned.
-    </p>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2 class="title">📞 Contact</h2>
+<p class="tagline">Let’s build something great</p>
+
+<a href="https://mail.google.com/mail/?view=cm&to=mrxofficial000000@email.com" class="btn">
+    Send Email
+</a>
 </section>
 
 <footer>
-    © 2026 M R X Developer Portfolio
+© 2026 M R X
 </footer>
+
+<script>
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function counter(id,end){
+let i=0,el=document.getElementById(id);
+let int=setInterval(()=>{
+i++;el.innerText=i+"+";
+if(i>=end) clearInterval(int);
+},40);
+}
+
+window.onload=()=>{
+counter("a1",2);
+counter("a2",25);
+counter("a3",10);
+}
+</script>
 
 </body>
 </html>
